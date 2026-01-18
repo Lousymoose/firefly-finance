@@ -39,6 +39,24 @@ services:
         max-file: "3"
         compress: "true"
 
+  cron:
+    image: alpine
+    hostname: cron
+    container_name: firefly_iii_cron
+    restart: always
+    env_file: .env
+    networks:
+      - firefly_iii
+    depends_on:
+      - app
+    command: sh -c "apk add --no-cache curl tzdata && ln -sf /usr/share/zoneinfo/$${TZ} /etc/localtime && echo '0 20 * * * curl -s http://app:8080/api/v1/cron/$${STATIC_CRON_TOKEN}' | crontab - && crond -f -L /dev/stdout"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
+
 volumes:
   firefly_iii_upload:
   firefly_iii_db:
