@@ -251,6 +251,7 @@ Ensure APP_KEY is exactly 32 characters AND contains only alphanumeric character
 
 ## File Structure
 
+```text
 firefly-finance/
 ├── .env                    # Local config (never commit)
 ├── .db.env                 # Local DB config (never commit)
@@ -260,6 +261,7 @@ firefly-finance/
 ├── backup.ps1              # Backup script (Windows)
 ├── Backups/                # Backup storage (never commit)
 └── README.md               # This file
+```
 
 ## Documentation
 
