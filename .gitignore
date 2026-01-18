@@ -1,0 +1,23 @@
+# Creds
+.env
+.db.env
+
+# Docker vols
+firefly_iii_upload/
+firefly_iii_db/
+
+# IDE and editor
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Log
+*.log
+
+# Backup
+*.bak
+*.backup
