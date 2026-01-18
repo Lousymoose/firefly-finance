@@ -12,20 +12,26 @@ Self-hosted personal finance manager using Docker and PostgreSQL.
 
 ### 1. Clone Repository
 
+```bash
 git clone https://github.com/YOUR-USERNAME/firefly-finance.git
 cd firefly-finance
+```
 
 ### 2. Configure Environment Files
 
 Either do it manually by renaming the example files or run the commands below based on the OS.
 
 #### Windows (PowerShell)
+```powershell
 Copy-Item .env.example .env
 Copy-Item .db.env.example .db.env
+```
 
 #### macOS/Linux
+```bash
 cp .env.example .env
 cp .db.env.example .db.env
+```
 
 ### 3. Generate Application Key
 
@@ -62,7 +68,9 @@ APP_URL=http://localhost:xxxx
 
 ### 6. Start Firefly III
 
+```bash
 docker compose up -d
+```
 
 Wait 10-20 seconds for initialization to complete. Check section "Daily Usage" if issues arise.
 
@@ -104,16 +112,24 @@ docker compose up -d
 ## Daily Usage
 
 ### Start Containers
+```bash
 docker compose up -d
+```
 
 ### Stop Containers
+```bash
 docker compose down
+```
 
 ### View Logs
+```bash
 docker compose logs app
+```
 
 ### Check Status
+```bash
 docker compose ps
+```
 
 ## Backup
 
@@ -122,7 +138,9 @@ docker compose ps
 The `backup.ps1` script creates backups in `./Backups` folder.
 
 Manual backup:
+```bash
 .\backup.ps1
+```
 
 Automated schedule (Windows Task Scheduler):
 1. Backup before shutdown
@@ -137,42 +155,64 @@ Script automatically:
 ### Manual Backup (Any OS)
 
 Stop containers:
+```bash
 docker compose down
+```
 
 Backup database:
+```bash
 docker run --rm -v firefly-finance_firefly_iii_db:/data -v $(pwd)/Backups:/backup alpine tar czf /backup/db-backup.tar.gz -C /data .
+```
 
 Backup uploads:
+```bash
 docker run --rm -v firefly-finance_firefly_iii_upload:/data -v $(pwd)/Backups:/backup alpine tar czf /backup/upload-backup.tar.gz -C /data .
+```
 
 Restart containers:
+```bash
 docker compose up -d
+```
 
 ### Restore from Backup
 
 Stop containers:
+```bash
 docker compose down
+```
 
 Remove old volumes:
+```bash
 docker volume rm firefly-finance_firefly_iii_db
 docker volume rm firefly-finance_firefly_iii_upload
+```
 
 Restore database:
+```bash
 docker run --rm -v firefly-finance_firefly_iii_db:/data -v $(pwd)/Backups:/backup alpine tar xzf /backup/db-backup.tar.gz -C /data
+```
 
 Restore uploads:
+```bash
 docker run --rm -v firefly-finance_firefly_iii_upload:/data -v $(pwd)/Backups:/backup alpine tar xzf /backup/upload-backup.tar.gz -C /data
+```
 
 Restart:
+```bash
 docker compose up -d
+```
 
 ## Updating Firefly III
 
 Pull latest images:
+```bash
 docker compose pull
+```
 
 Restart with new version:
+```bash
 docker compose up -d
+```
 
 Your data persists in Docker volumes across updates.
 
@@ -181,7 +221,9 @@ Your data persists in Docker volumes across updates.
 ### Cannot access application
 
 Check containers are running:
+```bash
 docker compose ps
+```
 
 Both containers should show "Up" status.
 
