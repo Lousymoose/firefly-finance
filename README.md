@@ -2,12 +2,6 @@
 
 Self-hosted personal finance manager using Docker and PostgreSQL.
 
-## Prerequisites
-
-- Docker Desktop installed and running
-- Git installed
-- Windows 10/11 or macOS
-
 ## Installation
 
 ### 1. Clone Repository
