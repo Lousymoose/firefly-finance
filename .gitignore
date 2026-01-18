@@ -2,9 +2,10 @@
 .env
 .db.env
 
-# Docker vols
+# Docker vols and backup
 firefly_iii_upload/
 firefly_iii_db/
+Backups/
 
 # IDE and editor
 .vscode/
