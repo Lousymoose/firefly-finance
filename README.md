@@ -72,7 +72,7 @@ APP_URL=http://localhost:xxxx
 docker compose up -d
 ```
 
-Wait 10-20 seconds for initialization to complete. Check section "Daily Usage" if issues arise.
+Wait 10-20 seconds for initialization to complete. Check section [Daily Usage](#daily-usage) if issues arise.
 
 ### 7. Access Application
 
