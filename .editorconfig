@@ -1,0 +1,29 @@
+# root already set
+[*.sh]
+end_of_line = lf
+charset = utf-8
+
+[*.env]
+end_of_line = lf
+charset = utf-8
+
+[*.md]
+end_of_line = lf
+charset = utf-8
+
+[*.toml]
+end_of_line = lf
+charset = utf-8
+
+[*.py]
+end_of_line = lf
+charset = utf-8
+
+[Justfile]
+end_of_line = lf
+charset = utf-8
+
+# force LF everywhere:
+[*]
+end_of_line = lf
+charset = utf-8

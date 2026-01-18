@@ -1,0 +1,6 @@
+# enforce Unix (LF) line endings for all shell scripts and .env
+*.sh text eol=lf
+*.env text eol=lf
+
+# normalize line endings for all text files
+* text=auto

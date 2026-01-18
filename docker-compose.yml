@@ -15,6 +15,12 @@ services:
       - 80:8080
     depends_on:
       - db
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
 
   db:
     image: postgres:16
@@ -26,6 +32,12 @@ services:
       - firefly_iii
     volumes:
       - firefly_iii_db:/var/lib/postgresql/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
 
 volumes:
   firefly_iii_upload:
