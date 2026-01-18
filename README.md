@@ -7,7 +7,7 @@ Self-hosted personal finance manager using Docker and PostgreSQL.
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/firefly-finance.git
+git clone https://github.com/Lousymoose/firefly-finance.git
 cd firefly-finance
 ```
 
