@@ -49,7 +49,7 @@ services:
       - firefly_iii
     depends_on:
       - app
-    command: sh -c "apk add --no-cache curl tzdata && ln -sf /usr/share/zoneinfo/$${TZ} /etc/localtime && echo '0 20 * * * curl -s http://app:8080/api/v1/cron/$${STATIC_CRON_TOKEN}' | crontab - && crond -f -L /dev/stdout"
+    command: sh -c "apk add --no-cache curl tzdata && ln -sf /usr/share/zoneinfo/$${TZ} /etc/localtime && echo '0 20 * * * curl -s http://app:8080/api/v1/cron/${STATIC_CRON_TOKEN}' | crontab - && crond -f -L /dev/stdout"
     logging:
       driver: json-file
       options:
