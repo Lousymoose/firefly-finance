@@ -6,6 +6,7 @@
 firefly_iii_upload/
 firefly_iii_db/
 Backups/
+parser/
 
 # IDE and editor
 .vscode/

@@ -57,6 +57,29 @@ services:
         max-file: "3"
         compress: "true"
 
+  importer:
+    image: fireflyiii/data-importer:latest
+    hostname: importer
+    restart: always
+    container_name: firefly_iii_importer
+    networks:
+      - firefly_iii
+    ports:
+      - '80:8080'
+    depends_on:
+      - app
+    environment:
+      - FIREFLY_III_URL=http://app:8080
+      - VANITY_URL=http://localhost:8080
+      - TZ=Europe/Berlin
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
+
+
 volumes:
   firefly_iii_upload:
   firefly_iii_db:
