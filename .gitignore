@@ -1,28 +1,22 @@
-# Creds
+# Environment & Secrets
 .env
 .db.env
 
-# Docker vols and backup
-firefly_iii_upload/
-firefly_iii_db/
+# Data (contains personal financial data)
 Backups/
 parser/
 
-# IDE and editor
-.vscode/
-*.swp
-*.swo
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Log
-*.log
-
-# Backup
-*.bak
-*.backup
-
-# Misc
-*.ipynb
+# IDE
+.vscode/
+.idea/
